@@ -11,7 +11,7 @@ Install the below package and server before using API.
     $ redis-server
 
 2. Go to MovieRating/
-3. run the following command to start the celery workers.
+3. Run the following command to start the celery workers.
     $ celery -A MovieRating worker -l info
 
 4. Run the following command to produce task periodically.
@@ -20,18 +20,15 @@ Install the below package and server before using API.
 5. Run requirements.txt file to install all dependencies of API.
     $ pip install -r requirement.txt
 
-6. run the migrations: 
+6. Run the migrations: 
     $ python manage.py makemigrations
     $ python manage.py migrate
 
-7. insert dummy data:
+7. Insert dummy data:
     $ python MovieRating/SetupData.py
 
-8. python
+8. Python
     $ python manage.py runserver
-
-
-
 
 
 ```
@@ -49,11 +46,14 @@ Install the below package and server before using API.
 
 ```
 $ http://localhost:8000/Api/register
+
   * Method -> POST
+  
   * Url params
            username[String]
            password[String]
            email[String]
+           
   * Success Response
            Status - 200
            Content - {'Message' : 'User created successfully.'}
@@ -66,10 +66,13 @@ $ http://localhost:8000/Api/register
            Content - {'error': 'username, password & email are required but not provided'}
 
 $ http://localhost:8000/Api/login 
+
   * Method -> POST
+  
   * Url params
            username[String]
            password[String]
+           
   * Success Response
            Status - 200
            Content - {'token': token}
@@ -82,7 +85,9 @@ $ http://localhost:8000/Api/login
            Content - {'error': 'Please provide both username and password'}
 
 $ http://localhost:8000/Movie/movieadd
+
   * Method -> POST
+  
   * headers:
         Authorization: Token
 
@@ -101,9 +106,13 @@ $ http://localhost:8000/Movie/movieadd
            Content - {'error': 'Movie already present..'}
 
 $ http://localhost:8000/Movie/rating
+
   * Method -> POST
+  
+  * headers:
+        Authorization: Token
+        
   * Url params
-           Authorization: Token
            movie[String]
            rating[Number]
 
