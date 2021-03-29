@@ -23,7 +23,7 @@ librabbitmq==2.0.0
 msgpack==1.0.0
 pkg-resources==0.0.0
 pycparser==2.20
-Pygments==2.6.1
+Pygments==2.7.4
 python-crontab==2.5.1
 python-dateutil==2.8.1
 pytz==2020.1
